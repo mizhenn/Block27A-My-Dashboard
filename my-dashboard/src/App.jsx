@@ -1,30 +1,27 @@
 
 import React from 'react';
-import { Container, Grid } from '@mui/material';
-import Header from './Component/Header';
+// import Dashboard from './Component/Dashboard';
+// import Header from './Component/Header';
 import Sidebar from './Component/Sidebar';
-// import TransactionLog from './components/TransactionLog';
-
-
+import TransactionLog from './Component/TransactionLog';
+import Chart from "./Component/Chart";
 function App() {
+
+
+
   return (
-    <Container>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Header />
-        </Grid>
-        <Grid item xs={3}>
-          <Sidebar />
-        </Grid>
-        <Grid item xs={9}>
-          <TransactionLog />
-        </Grid>
-        <Grid item xs={12}>
-          <FAQs />
-        </Grid>
-      </Grid>
-    </Container>
-  );
+    <>
+    <Dashboard/>
+    <br/>
+    <br/>
+     {/* <Heading/> */}
+     <Sidebar/>
+     <Chart/>
+     <br/>
+     <br/>
+     <TransactionLog/>
+    </>
+  )
 }
 
-export default App;
+export default App
