@@ -1,43 +1,29 @@
-import "./App.css";
-import SideBarMenu from "./Component/SidebarMenu";
-import RecentTransaction from "./Component/RecentTransaction";
-import Grid from "@mui/material/Unstable_Grid2";
-import RevenueGenerated from "./Component/RevenueGenerated";
-import BarChart from "./Component/BarChartDiagram";
-import { Container, Paper } from "@mui/material";
-import Header from "./Component/Header";
+
+import React from 'react';
+import { Container, Grid } from '@mui/material';
+import Header from './Component/Header';
+import Sidebar from './Component/Sidebar';
+// import TransactionLog from './components/TransactionLog';
+
 
 function App() {
-
-  const paperStyles = {
-    padding:'20px',
-    backgroundColor:'#F0F0F0'
-  }
-
   return (
-    <Paper variant="elevation" elevation={0} style={paperStyles}>
-      <Container style={{ width: "25vw", float: "left" }}>
-        <SideBarMenu />
-      </Container>
-      <Grid container spacing={0} columnSpacing={3}>
+    <Container>
+      <Grid container spacing={3}>
         <Grid item xs={12}>
-         <Header/>
+          <Header />
         </Grid>
-        <Grid item xs={6}>
-          <RecentTransaction />
+        <Grid item xs={3}>
+          <Sidebar />
         </Grid>
-        <Grid item xs={6}>
-          <RevenueGenerated />
+        <Grid item xs={9}>
+          <TransactionLog />
         </Grid>
-        <Grid item xs={2}>
-
-        </Grid>
-
-        <Grid item xs={8}>
-          <BarChart />
+        <Grid item xs={12}>
+          <FAQs />
         </Grid>
       </Grid>
-    </Paper>
+    </Container>
   );
 }
 
